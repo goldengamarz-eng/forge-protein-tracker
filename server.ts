@@ -80,7 +80,8 @@ ${userPrompt ? `User notes about this meal: "${userPrompt}"` : ''}
 Be realistic and objective. All estimations must be marked clearly as dietary approximations.`;
 
       const response = await ai.models.generateContent({
-       model: 'gemini-1.5-flash',
+       model: 'gemini-1.5-flash-latest',
+        
        
         contents: {
           parts: [
@@ -310,7 +311,8 @@ Always respond in simple Hinglish in this exact clean structure:
 🥑 Fats: [X]g
 💡 Quick Tip: [1 short line tip for muscle/fat loss]`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`, {
+      
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
